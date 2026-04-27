@@ -1,0 +1,10 @@
+Propriedade,Status,Detalhes
+Timestamp,2026-04-27T18:10:24.707200,
+Palavras,SATOR | AREPO | TENET | OPERA | ROTAS,
+Word Square,True,erros:0
+Simetria Central,True,erros:0
+Palíndromo Central,True,TENET
+W1_W5,True,SATOR<->SATOR
+W2_W4,True,AREPO<->AREPO
+W3_palindrome,True,TENET<->TENET
+GLOBAL,True,

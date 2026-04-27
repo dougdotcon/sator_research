@@ -1,0 +1,10 @@
+Métrica,Valor (bits),Nota
+Direcional LR→,2.883856,Entropia de leitura
+Direcional ←RL,2.883856,Entropia de leitura
+Direcional ↓TB,2.883856,Entropia de leitura
+Direcional ↑BT,2.883856,Entropia de leitura
+Global Sator,2.883856,Toda a matriz
+Aleatório (média),3.865392,N=1000 amostras
+Aleatório (std),0.164401,N=1000 amostras
+Δ (aleatório-Sator),0.981536,Ganho estrutural
+Δ direcional,0.000000,Invariância direcional

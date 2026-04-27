@@ -1,0 +1,20 @@
+{
+  "language": "Latin",
+  "count": 2,
+  "squares": [
+    [
+      "ROTAS",
+      "OPERA",
+      "TENET",
+      "AREPO",
+      "SATOR"
+    ],
+    [
+      "SATOR",
+      "AREPO",
+      "TENET",
+      "OPERA",
+      "ROTAS"
+    ]
+  ]
+}
