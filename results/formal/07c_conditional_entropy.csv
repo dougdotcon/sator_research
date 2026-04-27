@@ -1,0 +1,16 @@
+H_M_total_bits,117.51099295352732
+H_M_given_G_bits,42.30395746326983
+delta_H_bits,75.20703549025748
+delta_H_log_formula,16 * log2(26)
+H_per_pos_uniform,4.700439718141093
+H_per_pos_given_G,1.6921582985307932
+H_LR,2.8838561897747246
+H_RL,2.8838561897747246
+H_TB,2.8838561897747246
+H_BT,2.8838561897747246
+delta_directional,0.0
+epsilon_numerical,6.403447083191348e-16
+delta_directional_formal,|ΔH_dir| < 6.40e-16 bits
+H_random_mean,3.864215298277501
+H_random_std,0.16489722811585686
+reduction_vs_random,0.9803591085027765

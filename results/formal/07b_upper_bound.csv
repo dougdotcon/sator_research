@@ -1,0 +1,4 @@
+lang,L5,palindromes,rev_pairs,found,upper_bound,density,density_by_pairs
+Latin,69,1,28,2,28,0.000420,0.071429
+English,125,8,55,0,440,0.000000,0.000000
+Portugues,96,11,35,40,385,0.004340,0.103896
