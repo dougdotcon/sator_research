@@ -83,6 +83,15 @@ An implementation of Error Correcting Code properties demonstrated a 98.8% recov
 **Isfet vs Ma'at Cycle:**
 ![Isfet Maat Cycle](figures/animations/isfet_maat_cycle.gif)
 
+### EXP-06: Formal Proofs (Klein Group & CSP Bounds)
+
+![Status](https://img.shields.io/badge/Result-Formally_Proven-success)
+
+The foundational symmetries of the Sator Square were mapped mathematically, proving closure under the **Klein four-group** $G \cong \mathbb{Z}_2 \times \mathbb{Z}_2$. By calculating proper Constrain-Satisfaction bounds, theoretical capacities for its status as a block-code $(n=25, k=9, R=0.36)$ were demonstrated.
+
+![Klein Group](figures/formal/06a_klein_group.png)
+![CSP bounds](figures/formal/06b_csp_ecc.png)
+
 ---
 
 ## Project Structure

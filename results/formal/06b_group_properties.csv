@@ -1,0 +1,7 @@
+Propriedade,Resultado
+closure,True
+associativity,True
+identity,e
+self_inverse,True
+abelian,True
+is_klein_group,True

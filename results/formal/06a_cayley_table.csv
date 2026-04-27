@@ -1,0 +1,5 @@
+,e,T,R,TR
+e,e,T,R,TR
+T,T,e,TR,R
+R,R,TR,e,T
+TR,TR,R,T,e

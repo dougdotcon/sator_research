@@ -1,0 +1,11 @@
+n_free,9
+n_total,25
+n_redundant,16
+code_rate,0.36
+redundancy,0.64
+orbit_sizes,"[1, 2, 2, 2, 2, 4, 4, 4, 4]"
+d_min_structural,1
+t_hamming,0
+singleton_bound,17
+channel_capacity_1error,0.988
+epsilon_1error,0.01200000000000001

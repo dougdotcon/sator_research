@@ -17,6 +17,7 @@
 | EXP-03: Rarity Proof | ![OK](https://img.shields.io/badge/-OK-success) | 43.6s |
 | EXP-04: Multi-Language Generator | ![OK](https://img.shields.io/badge/-OK-success) | 3.3s |
 | EXP-05: Tamesis Bridge | ![OK](https://img.shields.io/badge/-OK-success) | 10.8s |
+| EXP-06: Formal Proofs | ![OK](https://img.shields.io/badge/-OK-success) | 3.2s |
 
 ---
 
@@ -25,6 +26,8 @@
 - `figures/animations/entropy_reduction.gif` (GIF)
 - `figures/animations/isfet_maat_cycle.gif` (GIF)
 - `figures/entropy_maps/entropy_heatmap.png` (PNG)
+- `figures/formal/06a_klein_group.png` (PNG)
+- `figures/formal/06b_csp_ecc.png` (PNG)
 - `figures/rarity/compression_curve.png` (PNG)
 - `figures/rarity/rarity_funnel.png` (PNG)
 - `figures/symmetry_viz/found_squares.png` (PNG)
@@ -40,6 +43,11 @@
 - `results/entropy/01_validation_report.csv`
 - `results/entropy/02_entropy_data.csv`
 - `results/entropy/05_bridge_data.csv`
+- `results/formal/06a_cayley_table.csv`
+- `results/formal/06b_group_properties.csv`
+- `results/formal/06c_orbits.csv`
+- `results/formal/06d_csp_bounds.csv`
+- `results/formal/06e_ecc_analysis.csv`
 - `results/rarity/03_rarity_data.csv`
 - `results/squares/04_squares_summary.csv`
 - `results/squares/squares_english.json`

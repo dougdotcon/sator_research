@@ -1,0 +1,9 @@
+total_positions,25
+n_orbits,9
+n_constrained,16
+total_space,236773830007967588876795164938469376
+constrained_space,5429503678976
+compression_factor,2.2931181536377115e-23
+log2_total,117.5109929535273
+log2_constrained,42.30395746326983
+information_gain_bits,75.20703549025748
