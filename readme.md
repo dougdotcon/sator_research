@@ -31,8 +31,8 @@ The central objective is to transform the Sator Square from a linguistic curiosi
 | $\Delta H$ conditional | $H(M) - H(M\|G) = 16 \cdot \log_2 26 \approx 75.2$ bits | Proved (EXP-07) |
 | $\|\Delta H_{\text{dir}}\|$ | $< 6.40 \times 10^{-16}$ bits $(\varepsilon_{\text{machine}})$ | Computational (not exactly 0) |
 | Monte Carlo rarity | 0 hits / 500,000 trials | Empirical confirmation |
-| $d_{\min}$ (non-trivial) | 2 (orbit of size 2) | Computed (EXP-07) |
-| Upper bound $\|\Omega''\|$ | $\leq \|L_5^{\text{rev}}\| \cdot \|L_5^{\text{pal}}\|$ | Proved (EXP-07) |
+| $d_{\min}^{\text{orb}}$ (non-trivial)| 2 (orbit of size 2) | Computed (EXP-07) |
+| Upper bound $\|\Omega''\|$ | $\leq \|L_5^{\text{rev}}\|^2 \cdot \|L_5^{\text{pal}}\|$ | Proved (EXP-07) |
 | Portuguese density | 40 / 385 = 0.104 | Empirical (curated lexicon) |
 | Recovery rate ($t=1$) | $98.8\% \pm 1.8\%$ | Empirical (EXP-05) |
 
@@ -54,7 +54,7 @@ The central objective is to transform the Sator Square from a linguistic curiosi
 
 ![Status](https://img.shields.io/badge/Result-Verified-success)
 
-All three symmetry constraints verified computationally (0 errors across 25 positions). The matrix $M$ satisfies $M = M^T$, $M_{ij} = M_{4-i,4-j}$, and row 3 is a palindrome.
+All symmetry constraints verified computationally (0 errors across 25 positions). The matrix $M$ primary constraints are $M = M^T$ (Word Square) and $M_{ij} = M_{4-i,4-j}$ (Central Symmetry). The Palindromic Center ($M_{2j} = M_{2,4-j}$) follows as a direct corollary of WS and CS.
 
 ![Orbits and Symmetries](figures/symmetry_viz/sator_orbits.png)
 
@@ -134,14 +134,14 @@ CSP backtracking over $|\Sigma|=3$ confirmed: exactly $3^9 = 19{,}683$ consisten
 
 ![Status](https://img.shields.io/badge/Result-Three_Pillars_Complete-success)
 
-**Pillar 1 — Minimum Distance $d_{\min}$:**
-Orbit sizes are $\{1, 2, 2, 2, 2, 4, 4, 4, 4\}$. Changing a single orbit changes exactly $|O_i|$ matrix positions simultaneously, so $d_{\min}^{\text{non-trivial}} = 2$. Empirically confirmed over 5,000 random symmetric matrix pairs.
+**Pillar 1 — Minimum Orbit Distance $d_{\min}^{\text{orb}}$:**
+Orbit sizes are $\{1, 2, 2, 2, 2, 4, 4, 4, 4\}$. This is not a Hamming minimum distance of a classical linear code, but an orbit-induced symbolic distance. Changing a single orbit changes exactly $|O_i|$ matrix positions simultaneously, so $d_{\min}^{\text{orb}} = 2$. Empirically confirmed over 5,000 random symmetric matrix pairs.
 
 **Pillar 2 — Formal Upper Bound (proved):**
 
-$$|\Omega''| \leq |L_5^{\text{rev}}| \cdot |L_5^{\text{pal}}|$$
+$$|\Omega''| \leq |L_5^{\text{rev}}|^2 \cdot |L_5^{\text{pal}}|$$
 
-*Proof:* any Sator-like square is uniquely determined by the pair $(w_1, w_3)$ where $w_1 \in L_5^{\text{rev}}$ and $w_3 \in L_5^{\text{pal}}$; all remaining rows follow from the cross-constraints. $\blacksquare$
+*Proof:* any Sator-like square relies geometrically on selections for rows 1, 2, and 3. Bounding the possible options conservatively, the selection relies on forming $w_1, w_2 \in L_5^{\text{rev}}$ and $w_3 \in L_5^{\text{pal}}$. A tighter bound requires the cross-constraint $C(w_1, w_2, w_3)=1$ to be satisfied. $\blacksquare$
 
 **Pillar 3 — Full Conditional Entropy:**
 

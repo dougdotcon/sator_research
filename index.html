@@ -402,17 +402,7 @@
 
     <div class="abstract">
         <span class="abstract-title">Abstract</span>
-        We present a formal investigation of the Sator Square as a mathematical information structure.
-        We prove that the symmetry group acting on the square is the <em>Klein four-group</em>
-        $G \cong \mathbb{Z}_2 \times \mathbb{Z}_2$, which partitions the 25 matrix positions into exactly
-        9 independent orbits, reducing the effective information content from $26^{25}$ to $26^9$&mdash;a
-        compression factor of $26^{-16} \approx 2.29 \times 10^{-23}$.
-        Computational experiments over $N = 500{,}000$ random matrices confirm that the probability of
-        encountering this structure by chance is consistent with this theoretical bound.
-        Shannon entropy measurements reveal a directional invariance bounded by machine precision $|\Delta H| < \varepsilon \approx 6.40 \times 10^{-16}$ bits&mdash;a property we term <em>omnidirectional entropy parity</em>.
-        An error-correction analysis shows a recovery rate of $98.8\%$ under single-position corruption. We classify the Sator Square not as a classical block code, but as a <em>symmetry-constrained symbolic structure</em> with effective rate $R = 0.36$ and a non-trivial minimum distance of $d_{\min} = 2$.
-        We also formally prove the combinatorial upper bound $|\Omega''| \leq |L_5^{\text{rev}}| \cdot |L_5^{\text{pal}}|$ and connect these findings to the TAMESIS&ndash;TDTR framework, interpreting the square as a
-        fixed point of the Ma&rsquo;at operator under the Isfet perturbation model.
+        We present a formal investigation of the Sator Square as a symmetry-constrained symbolic information structure. We prove that its generating symmetries form the Klein four-group $G \cong \mathbb{Z}_2 \times \mathbb{Z}_2$, whose action partitions the 25 matrix positions into 9 independent orbits. This reduces the unconstrained symbolic space from $26^{25}$ to $26^9$, yielding a compression factor of $26^{-16} \approx 2.29 \times 10^{-23}$. Shannon entropy measurements show omnidirectional entropy parity under canonical reading operations, with numerical deviations bounded by machine precision. We further model the square as a constraint satisfaction problem and as a non-linear, symmetry-constrained symbolic structure with effective rate $R=9/25$. Error-recovery experiments demonstrate high robustness under single-position corruption. Finally, we generalize the construction across curated lexicons and identify non-trivial Sator-like families in Portuguese, suggesting that the Sator Square belongs to a broader combinatorial class rather than being an isolated artifact.
     </div>
 
     <!-- ─── SECTION I ─── -->
@@ -454,12 +444,12 @@
     <div class="definition-box">
         <strong>Definition 1 (Sator Square).</strong>
         A matrix $M \in \Sigma^{5 \times 5}$ is a <em>Sator-type square</em> if and only if it satisfies
-        the following three constraints simultaneously:
+        the following two primary constraints:
         <ol>
             <li><strong>Word Square (WS):</strong> $M_{ij} = M_{ji}$ for all $i, j \in [5]$. The matrix equals its transpose.</li>
             <li><strong>Central Symmetry (CS):</strong> $M_{ij} = M_{4-i,\,4-j}$ for all $i, j \in [5]$. The matrix is invariant under 180&deg; rotation.</li>
-            <li><strong>Palindromic Center (PC):</strong> Row 3 (0-indexed row 2) is a palindrome: $M_{2j} = M_{2,\,4-j}$.</li>
         </ol>
+        Note that the Palindromic Center ($M_{2j} = M_{2,\,4-j}$) follows strictly as a corollary of the application of WS and CS, and is not an independent constraint.
     </div>
 
     <p>
@@ -661,10 +651,10 @@
 
     <div class="theorem-box">
         <strong>Theorem 4 (Formal Lexical Bound).</strong> For any given language lexicon $L_5$, the total number of Sator-like squares $|\Omega''|$ satisfies:
-        $$|\Omega''| \leq |L_5^{\text{rev}}| \cdot |L_5^{\text{pal}}|$$
+        $$|\Omega''| \leq |L_5^{\text{rev}}|^2 \cdot |L_5^{\text{pal}}|$$
         where $L_5^{\text{rev}}$ is the set of words with valid lexical reversals, and $L_5^{\text{pal}}$ is the set of valid palindromes.
         <br><br>
-        <em>Proof.</em> The formation of the matrix is unconditionally fixed by constraints propagating from exactly two independent lexical selections: the outer horizontal word $w_1 \in L_5^{\text{rev}}$, and the central palindrome $w_3 \in L_5^{\text{pal}}$. Selecting these two rows geometrically determines the necessary characters for $w_2$, forcing all other rows into deterministic propagation. $\blacksquare$
+        <em>Proof.</em> The formation of the matrix restricts $w_1, w_2$ to $L_5^{\text{rev}}$ and $w_3$ to $L_5^{\text{pal}}$. A mathematically tight subspace bounds this to combinations where the cross-constraint $C(w_1,w_2,w_3)=1$ holds (ensuring orthogonal coherence), restricting $|\Omega''| \leq |\{(w_1,w_2,w_3)\in L_5^{rev}\times L_5^{rev}\times L_5^{pal}: C(w_1,w_2,w_3)=1\}|$. The broader inequality holds unconditionally. $\blacksquare$
     </div>
 
     <figure>
@@ -710,11 +700,11 @@
     <p class="no-indent">
         The Sator Square is not a linear block code (it possesses no finite-field algebraic structure or additive closure). However, it behaves as a <strong>symmetry-constrained symbolic structure</strong> with an effective length of $n = 25$ and an effective dimension of $k = 9$ (yielding rate $R = 0.36$).
         <br><br>
-        To evaluate formal properties, we calculate the non-trivial <em>minimum distance</em> $d_{\min}$ representing the smallest simultaneous matrix distortion required to cross between two distinct valid configurations.
+        To evaluate formal properties, we calculate the non-trivial <em>minimum distance</em>. This is not a Hamming minimum distance of a classical linear code, but an orbit-induced symbolic distance $d_{\min}^{\text{orb}}$ representing the smallest simultaneous matrix distortion required to cross between two distinct valid configurations.
     </p>
 
     <div class="equation">
-        $$ d_{\min}^{\text{non-trivial}} = \min_{i \in [1, 9] \setminus \{\text{center}\}} |\mathcal{O}_i| = 2 $$
+        $$ d_{\min}^{\text{orb}} = \min_{i \in [1, 9] \setminus \{\text{center}\}} |\mathcal{O}_i| = 2 $$
     </div>
 
     <figure>
@@ -862,9 +852,9 @@
         <li>The group action partitions the 25 positions into exactly 9 independent orbits, yielding a
             structural compression factor of $26^{-16} \approx 2.29 \times 10^{-23}$ (Theorem 1, EXP-01, EXP-06).</li>
         <li>The Shannon entropy is directionally bounded and invariant below machine epsilon limits: $|\Delta H_{\mathrm{directional}}| < 6.40 \times 10^{-16}$ bits (Theorem 2).</li>
-        <li>Monte Carlo statistical filtering theoretically verifies the explicit $p = |\Sigma|^{-16}$ analytical bound (EXP-03).</li>
-        <li>The linguistic density of squares yields an explicitly formulated and proven Upper Bound where $|\Omega''| \leq |L_5^{\text{rev}}| \cdot |L_5^{\text{pal}}|$ (Theorem 4).</li>
-        <li>The internal $d_{\min}$ topologic minimum distance across variants acts strictly as an orbital component, $d_{\min}^{\text{non-trivial}} = 2$.</li>
+        <li>Monte Carlo results are consistent with the analytical $p = |\Sigma|^{-16}$ bound, simulating $N = 500{,}000$ iterations with zero chance formations (EXP-03).</li>
+        <li>The linguistic density of squares yields an explicitly formulated and proven Upper Bound where $|\Omega''| \leq |L_5^{\text{rev}}|^2 \cdot |L_5^{\text{pal}}|$ (Theorem 4).</li>
+        <li>The internal topologic symbolic distance across variants acts strictly as an orbit distance, $d_{\min}^{\text{orb}} = 2$.</li>
         <li>Viewed strictly as a symmetry-constrained symbolic structure, it provides a quasi-perfect $t=1$ recovery cycle of $98.8\%$ without possessing classic additive linear properties.</li>
         <li>The structure belongs to the fixed-point class $\mathcal{F}_{\mathrm{Sator}}$ within the TAMESIS
             framework, representing maximal symbolic reversibility dual to the physical irreversibility
